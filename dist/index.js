@@ -6,7 +6,7 @@ var buttonMathSqrt = document.querySelector('#button-math-sqrt');
 var numberFirst;
 var numberSecond;
 var mathOperation;
-var result;
+var result = '';
 
 function clearInput() {
   numberFirst = '';
@@ -24,7 +24,7 @@ function calcMathSqrt() {
 
 function calcResult() {
   if (mathOperation === '+') {
-    result = +numberFirst + +numberSecond; //console.log('result', result);
+    result = +numberFirst + +numberSecond;
   }
 
   if (mathOperation === '-') {
@@ -53,9 +53,12 @@ calculatorKeyboard.addEventListener('click', function (event) {
   /*** Enter Numbers from Calculator Keyboard ***/
 
   if (target.classList.contains('calculator__button--number')) {
-    //console.log('result', result);
+    console.log('target.innerHTML', target.innerHTML);
+
     if (result != '') {
-      calculatorInput.value = target.innerHTML;
+      calculatorInput.value = target.innerHTML; //console.log('result', result);
+
+      result = ''; //console.log('result', result);
     } else {
       calculatorInput.value += target.innerHTML;
     }
@@ -83,7 +86,7 @@ calculatorKeyboard.addEventListener('click', function (event) {
     calculatorInput.value = '';
     mathOperation = target.innerHTML; //console.log('mathOperation', mathOperation);
   }
-  /*** Calculate RESULT ***/
+  /*** Calculate ResultT ***/
 
 
   if (target.classList.contains('calculator__button--equal')) {
