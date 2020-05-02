@@ -7,7 +7,7 @@ const buttonMathSqrt = document.querySelector('#button-math-sqrt');
 let numberFirst;
 let numberSecond;
 let mathOperation;
-let result;
+let result = '';
 
 function clearInput() {
 	numberFirst = '';
@@ -22,19 +22,16 @@ function calcMathSqrt() {
 	return calculatorInput.value = result;
 }
 function calcResult() {
-	
-
-	if(mathOperation === '+') {
+	if (mathOperation === '+') {
 		result = +numberFirst + +numberSecond;
-		//console.log('result', result);
 	}
 
-	if(mathOperation === '-') {
+	if (mathOperation === '-') {
 		result = numberFirst - numberSecond;
 		//console.log('result', result);
 	}
 
-	if(mathOperation === '×') {
+	if (mathOperation === '×') {
 		result = numberFirst * numberSecond;
 		//console.log('result', result);
 	}
@@ -57,26 +54,29 @@ calculatorKeyboard.addEventListener('click', function(event) {
 	let target = event.target;
 
 	/*** Enter Numbers from Calculator Keyboard ***/
-	if(target.classList.contains('calculator__button--number')) {
-		//console.log('result', result);
-		if(result != '') {
+	if (target.classList.contains('calculator__button--number')) {
+		console.log('target.innerHTML', target.innerHTML);
+		if (result != '') {
 			calculatorInput.value = target.innerHTML;
+			//console.log('result', result);
+			result = '';
+			//console.log('result', result);
 		} else {
 			calculatorInput.value += target.innerHTML;
 		}
 	}
 
 	/*** Calculation Math Sqrt ***/
-	if(target.classList.contains('calculator__button--math-sqrt')) {
-		if(calculatorInput.value === '') {
+	if (target.classList.contains('calculator__button--math-sqrt')) {
+		if (calculatorInput.value === '') {
 			alert('Enter a number!')
 		}
 		calcMathSqrt();
 	}
 
 	/*** Calculate Math Operations ***/
-	if(target.classList.contains('calculator__button--math-operation')) {
-		if(calculatorInput.value === '') {
+	if (target.classList.contains('calculator__button--math-operation')) {
+		if (calculatorInput.value === '') {
 			alert('Enter a number!')
 		}
 
@@ -89,8 +89,8 @@ calculatorKeyboard.addEventListener('click', function(event) {
 		//console.log('mathOperation', mathOperation);
 	}
 
-	/*** Calculate RESULT ***/
-	if(target.classList.contains('calculator__button--equal')) {
+	/*** Calculate ResultT ***/
+	if (target.classList.contains('calculator__button--equal')) {
 		//console.log('result', result);
 		numberSecond = calculatorInput.value;
 		//console.log('numberSecond', numberSecond);
@@ -99,8 +99,8 @@ calculatorKeyboard.addEventListener('click', function(event) {
 	}
 
 	/*** Change Number Sign ***/
-	if(target.classList.contains('calculator__button--plus-minus')) {
-		if(calculatorInput.value === '') {
+	if (target.classList.contains('calculator__button--plus-minus')) {
+		if (calculatorInput.value === '') {
 			alert('Enter a number!')
 		}
 
@@ -108,7 +108,7 @@ calculatorKeyboard.addEventListener('click', function(event) {
 	}
 
 	/*** Clear Input by AC-button ***/
-	if(target.classList.contains('calculator__button--dropping')) {
+	if (target.classList.contains('calculator__button--dropping')) {
 		clearInput();
 	}
 });
