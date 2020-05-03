@@ -77,17 +77,21 @@ input[type=number] {
     flex-direction: column;
     padding: 50px;
     width: 504px;
-    border: 2px solid #000; }
+    -webkit-box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.2), -10px -10px 20px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.2), -10px -10px 20px 0 rgba(255, 255, 255, 0.5); }
   .calculator__display {
     margin-bottom: 50px;
     width: 100%; }
   .calculator__input {
-    padding: 22.5px 5px;
+    padding: 22.5px 15px;
     width: 100%;
-    border: 2px solid #000;
+    border: none;
     font-size: 38px;
     font-family: 'Orbitron', sans-serif;
-    font-style: italic; }
+    font-style: italic;
+    color: #4e4e4e;
+    -webkit-box-shadow: inset 6px 6px 12px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 12px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 6px 6px 12px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 12px 0 rgba(255, 255, 255, 0.5); }
     .calculator__input:focus {
       outline: none; }
   .calculator__panel {
@@ -114,16 +118,22 @@ input[type=number] {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    margin-bottom: 5.33px;
-    padding: 23px 0;
-    width: 24%;
-    border: 2px solid #000;
+    margin-bottom: 10px;
+    padding: 17px 0;
+    width: 82px;
+    height: 82px;
+    color: #4e4e4e;
+    -webkit-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2), -5px -5px 10px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2), -5px -5px 10px 0 rgba(255, 255, 255, 0.5);
     cursor: pointer;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
     .calculator__button:hover {
-      color: #fff;
-      background-color: #000; }
+      /*color: $white;
+			background-color: $black;*/
+      color: #292929;
+      -webkit-box-shadow: inset 3px 3px 5px 0 rgba(0, 0, 0, 0.2), inset -3px -3px 5px 0 rgba(255, 255, 255, 0.5);
+      box-shadow: inset 3px 3px 5px 0 rgba(0, 0, 0, 0.2), inset -3px -3px 5px 0 rgba(255, 255, 255, 0.5); }
   .calculator__corps, .calculator__input, .calculator__button {
     border-radius: 10px; }
