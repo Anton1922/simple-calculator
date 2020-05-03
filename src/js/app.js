@@ -49,64 +49,57 @@ function calcResult() {
 
 	return result;
 }
+function checkInputValue() {
+	if (calculatorInput.value === '' || !isFinite(calculatorInput.value)) {
+		alert('Enter a number!');
+		calculatorInput.value = '';
+
+		return true;
+	}
+
+	return false;
+}
+
 /*** Add Event Listener for Keyboard ***/
 calculatorKeyboard.addEventListener('click', function(event) {
 	let target = event.target;
-
 	/*** Enter Numbers from Calculator Keyboard ***/
 	if (target.classList.contains('calculator__button--number')) {
 		console.log('target.innerHTML', target.innerHTML);
 		if (result != '') {
 			calculatorInput.value = target.innerHTML;
-			//console.log('result', result);
 			result = '';
-			//console.log('result', result);
 		} else {
 			calculatorInput.value += target.innerHTML;
 		}
 	}
-
 	/*** Calculation Math Sqrt ***/
 	if (target.classList.contains('calculator__button--math-sqrt')) {
-		if (calculatorInput.value === '') {
-			alert('Enter a number!')
+		if(!checkInputValue()) {
+			calcMathSqrt();
 		}
-		calcMathSqrt();
 	}
-
 	/*** Calculate Math Operations ***/
 	if (target.classList.contains('calculator__button--math-operation')) {
-		if (calculatorInput.value === '') {
-			alert('Enter a number!')
+		if(!checkInputValue()) {
+			numberFirst = calculatorInput.value;
+			calculatorInput.value = '';
+			mathOperation = target.innerHTML;
 		}
-
-		numberFirst = calculatorInput.value;
-		//console.log('numberFirst', numberFirst);
-
-		calculatorInput.value = '';
-
-		mathOperation = target.innerHTML;
-		//console.log('mathOperation', mathOperation);
 	}
-
 	/*** Calculate ResultT ***/
 	if (target.classList.contains('calculator__button--equal')) {
-		//console.log('result', result);
-		numberSecond = calculatorInput.value;
-		//console.log('numberSecond', numberSecond);
-
-		calcResult();
+		if(!checkInputValue()) {
+			numberSecond = calculatorInput.value;
+			calcResult();
+		}	
 	}
-
 	/*** Change Number Sign ***/
 	if (target.classList.contains('calculator__button--plus-minus')) {
-		if (calculatorInput.value === '') {
-			alert('Enter a number!')
-		}
-
-		calculatorInput.value = String(-1 * (+calculatorInput.value));
+		if(!checkInputValue()) {
+			calculatorInput.value = String(-1 * (+calculatorInput.value));
+		} 		
 	}
-
 	/*** Clear Input by AC-button ***/
 	if (target.classList.contains('calculator__button--dropping')) {
 		clearInput();
