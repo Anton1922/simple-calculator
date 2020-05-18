@@ -3,7 +3,6 @@
 const calculatorInput = document.querySelector('#calculator-input');
 const calculatorKeyboard = document.querySelector('.calculator__panel');
 const buttonMathSqrt = document.querySelector('#button-math-sqrt');
-
 let numberFirst;
 let numberSecond;
 let mathOperation;
@@ -16,11 +15,12 @@ function clearInput() {
 	result = '';
 	return calculatorInput.value = '';
 }
+
 function calcMathSqrt() {
 	result = Math.sqrt(+calculatorInput.value);
-	//console.log('result', result);
 	return calculatorInput.value = result;
 }
+
 function calcResult() {
 	if (mathOperation === '+') {
 		result = +numberFirst + +numberSecond;
@@ -28,17 +28,14 @@ function calcResult() {
 
 	if (mathOperation === '-') {
 		result = numberFirst - numberSecond;
-		//console.log('result', result);
 	}
 
 	if (mathOperation === '×') {
 		result = numberFirst * numberSecond;
-		//console.log('result', result);
 	}
 
 	if(mathOperation === '÷') {
 		result = numberFirst / numberSecond;
-		//console.log('result', result);
 	}
 
 	calculatorInput.value = String(result);
@@ -49,6 +46,7 @@ function calcResult() {
 
 	return result;
 }
+
 function checkInputValue() {
 	if (calculatorInput.value === '' || !isFinite(calculatorInput.value)) {
 		alert('Enter a number!');
@@ -56,7 +54,6 @@ function checkInputValue() {
 
 		return true;
 	}
-
 	return false;
 }
 

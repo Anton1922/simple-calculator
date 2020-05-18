@@ -24,13 +24,14 @@
 		padding:  22.5px 15px;
 		width: 100%;
 		border: none;
-		font-size: 38px;
+		text-align: right;
+		font-size: 42px;
 		font-family: 'Orbitron', sans-serif;
 		font-style: italic;
 		color: $grey;
-		box-shadow: 
-			inset 6px 6px 12px 0 rgba(0, 0, 0, 0.2),
-	  	inset -6px -6px 12px 0 rgba(255, 255, 255, 0.5);
+		//box-shadow: 
+			//inset 6px 6px 12px 0 rgba(0, 0, 0, 0.2),
+	  	//inset -6px -6px 12px 0 rgba(255, 255, 255, 0.5);
 
 		&:focus {
 			outline: none;

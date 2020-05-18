@@ -35,7 +35,7 @@ body {
   font-style: normal;
   font-weight: 700;
   font-family: san-serif;
-  color: #213632;
+  user-select: none;
 }
 
 img {
@@ -50,7 +50,6 @@ button:focus {
 a, a:hover {
   text-decoration: none;
 }
-
 
 /*** Chrome, Safari, Edge, Opera ***/
 input::-webkit-outer-spin-button,
