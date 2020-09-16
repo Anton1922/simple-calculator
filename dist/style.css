@@ -93,7 +93,9 @@ input[type=number] {
     font-size: 42px;
     font-family: 'Orbitron', sans-serif;
     font-style: italic;
-    color: #4e4e4e; }
+    color: #4e4e4e;
+    -webkit-box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5), inset -1px -1px 2px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5), inset -1px -1px 2px 0 rgba(255, 255, 255, 0.5); }
     .calculator__input:focus {
       outline: none; }
   .calculator__panel {
@@ -125,17 +127,19 @@ input[type=number] {
     width: 82px;
     height: 82px;
     color: #4e4e4e;
-    -webkit-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2), -5px -5px 10px 0 rgba(255, 255, 255, 0.5);
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2), -5px -5px 10px 0 rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5), -1px -1px 2px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5), -1px -1px 2px 0 rgba(255, 255, 255, 0.5);
     cursor: pointer;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
     .calculator__button:hover {
+      color: #000; }
+    .calculator__button:active {
       /*color: $white;
 			background-color: $black;*/
-      color: #292929;
-      -webkit-box-shadow: inset 3px 3px 5px 0 rgba(0, 0, 0, 0.2), inset -3px -3px 5px 0 rgba(255, 255, 255, 0.5);
-      box-shadow: inset 3px 3px 5px 0 rgba(0, 0, 0, 0.2), inset -3px -3px 5px 0 rgba(255, 255, 255, 0.5); }
+      color: #000;
+      -webkit-box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5), inset -1px -1px 2px 0 rgba(255, 255, 255, 0.5);
+      box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.5), inset -1px -1px 2px 0 rgba(255, 255, 255, 0.5); }
   .calculator__corps, .calculator__input, .calculator__button {
     border-radius: 10px; }
